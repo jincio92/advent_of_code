@@ -68,8 +68,8 @@ func main() {
 			// fmt.Printf("start run %d\n", j)
 			result := EvaluateV2(d, j, len(d)-2)
 			if testResult[i] == result {
-				fmt.Printf("testResult: %v, result: %v\n", testResult[i], result)
-				fmt.Printf("Trovato!\n")
+				// fmt.Printf("testResult: %v, result: %v\n", testResult[i], result)
+				// fmt.Printf("Trovato!\n")
 				sum += testResult[i]
 				break
 			}
