@@ -18,47 +18,47 @@ func main() {
 	scanner.Scan()
 	line := scanner.Text()
 
-	// listPart1 := []string{}
-	// for i := 0; i < len(line); i++ {
-	// 	value, err := strconv.Atoi(string(line[i]))
-	// 	if err != nil {
-	// 		panic(err)
-	// 	}
-	// 	for j := 0; j < value; j++ {
-	// 		if i%2 == 0 {
-	// 			listPart1 = append(listPart1, strconv.Itoa(i/2))
-	// 		} else {
-	// 			listPart1 = append(listPart1, ".")
-	// 		}
-	// 	}
-	// }
-	// // fmt.Printf("START newList: %v\n", newlist)
-	// fmt.Printf("delta: %v\n", len(listPart1)-Count(&listPart1, "."))
-	// for i := len(listPart1) - 1; i >= 0; i-- {
-	// 	if i < len(listPart1)-Count(&listPart1, ".") {
-	// 		println("BREAK!!!!")
-	// 		break
-	// 	}
-	// 	temp := listPart1[i]
+	listPart1 := []string{}
+	for i := 0; i < len(line); i++ {
+		value, err := strconv.Atoi(string(line[i]))
+		if err != nil {
+			panic(err)
+		}
+		for j := 0; j < value; j++ {
+			if i%2 == 0 {
+				listPart1 = append(listPart1, strconv.Itoa(i/2))
+			} else {
+				listPart1 = append(listPart1, ".")
+			}
+		}
+	}
+	// fmt.Printf("START newList: %v\n", newlist)
+	fmt.Printf("delta: %v\n", len(listPart1)-Count(&listPart1, "."))
+	for i := len(listPart1) - 1; i >= 0; i-- {
+		if i < len(listPart1)-Count(&listPart1, ".") {
+			println("BREAK!!!!")
+			break
+		}
+		temp := listPart1[i]
 
-	// 	listPart1[slices.Index(listPart1, ".")] = temp
-	// 	listPart1[i] = "."
-	// 	// fmt.Printf("newList: %v\n", newlist)
-	// }
-	// // fmt.Printf("FINList: %v\n", concatted)
+		listPart1[slices.Index(listPart1, ".")] = temp
+		listPart1[i] = "."
+		// fmt.Printf("newList: %v\n", newlist)
+	}
+	// fmt.Printf("FINList: %v\n", concatted)
 
-	// sum := 0
-	// for i, v := range listPart1 {
-	// 	if v == "." {
-	// 		break
-	// 	}
-	// 	intValue, err := strconv.Atoi(v)
-	// 	if err != nil {
-	// 		panic(err)
-	// 	}
-	// 	sum += i * intValue
-	// }
-	// fmt.Printf("Totale: %v\n", sum)
+	sum := 0
+	for i, v := range listPart1 {
+		if v == "." {
+			break
+		}
+		intValue, err := strconv.Atoi(v)
+		if err != nil {
+			panic(err)
+		}
+		sum += i * intValue
+	}
+	fmt.Printf("Totale: %v\n\n", sum)
 
 	listPart2 := []string{}
 	for i := 0; i < len(line); i++ {
@@ -74,7 +74,8 @@ func main() {
 			}
 		}
 	}
-	fmt.Printf("listPart2 START:%v\n", listPart2)
+
+	fmt.Printf("listPart2 START\n")
 
 	for i := len(listPart2) - 1; i >= 0; {
 		if listPart2[i] == "." {
@@ -111,7 +112,7 @@ func main() {
 		}
 	}
 
-	sum := 0
+	sum = 0
 
 	for i, v := range listPart2 {
 		if v == "." {
