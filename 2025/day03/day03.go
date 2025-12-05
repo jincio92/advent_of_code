@@ -15,11 +15,6 @@ func main() {
 		panic(err)
 	}
 	defer file.Close()
-	partOne(file)
-	// partTwo(file)
-}
-
-func partOne(file *os.File) {
 	scanner := bufio.NewScanner(file)
 	sum1 := 0
 	sum2 := 0
